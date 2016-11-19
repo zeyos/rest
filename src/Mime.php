@@ -1,8 +1,8 @@
 <?php
 namespace REST;
 
-function getMimetypeByExtension($extension) {
-	$map = array(
+class Mime {
+	public static $map = array(
 		'123'          => 'application/vnd.lotus-1-2-3',
 		'3dml'         => 'text/vnd.in3d.3dml',
 		'3ds'          => 'image/x-3ds',
@@ -1001,5 +1001,7 @@ function getMimetypeByExtension($extension) {
 		'zmm'          => 'application/vnd.handheld-entertainment+xml'
 	);
 
-	return isset($map[$extension]) ? $map[$extension] : 'application/octet-stream';
+	public static function getMimetypeByExtension($extension) {
+		return isset(self::$map[$extension]) ? self::$map[$extension] : 'application/octet-stream';
+	}
 }
