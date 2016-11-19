@@ -1,6 +1,8 @@
 <?php
 namespace REST;
 
+use REST\Error;
+
 /**
  * A simple REST server to handle REST requests
  *
@@ -279,7 +281,7 @@ abstract class Server {
 		if ( !$this->showerror )
 			return null;
 		elseif ( $this->showtrace )
-			return array('error' => $e->getMessage(), 'trace' => errorTrace($e));
+			return array('error' => $e->getMessage(), 'trace' => Error::errorTrace($e));
 		else
 			return array('error' => $e->getMessage());
 	}
