@@ -184,7 +184,7 @@ class Client {
 		if ( empty($params) ) {
 		} elseif ( $method === 'GET' ) {
 			if ( is_array($params) )
-				$query = ( $query === null ? '' : '&' ).http_build_query($params, null, '&');
+				$query = ( $query === null ? '' : '&' ).http_build_query($params, '', '&');
 			else
 				$query = ( $query === null ? '' : '&' ).$params;
 
